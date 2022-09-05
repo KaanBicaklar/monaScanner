@@ -4,7 +4,7 @@ with_nessus=$2
 username=$3
 password=$4
 
-for url in $(cat file);do
+for url in $(cat $file);do
 mkdir bb/$url
 subfinder -silent -d $url >> bb/$url/subdomainsof.$url
 cat bb/$url/subdomainsof.$url|httprobe >> bb/$url/alive.$url
